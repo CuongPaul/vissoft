@@ -1,0 +1,86 @@
+@use './variables' as *;
+
+// Icons
+@mixin dropdown-arrow {
+    content: '\f078';
+    font-family: FontAwesome, sans-serif;
+}
+
+@mixin check {
+    content: '\f00c';
+    font-family: FontAwesome, sans-serif;
+}
+
+@mixin hide {
+    position: fixed;
+    top: 0;
+    left: -9999px;
+    visibility: hidden;
+}
+
+@mixin show {
+    position: static;
+    visibility: visible;
+}
+
+// Usage: @include in a label
+@mixin radio-icon {
+    margin-left: 40px;
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        background-color: $input-field-background;
+        position: absolute;
+        top: 0;
+        left: -40px;
+    }
+}
+
+// Usage: @include in a input:checked ~ label
+@mixin radio-icon-checked {
+    &:after {
+        border: 2px solid $input-field-background;
+        background-color: $white;
+    }
+
+    &:before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: $blue;
+        border-radius: 50%;
+        z-index: 1;
+        position: absolute;
+        top: 8px;
+        left: -32px;
+    }
+}
+
+@mixin input-style {
+    text-transform: capitalize;
+    font-size: 16px;
+    color: $input-label;
+    background-color: $gray-f1;
+    font-weight: 400;
+    font-family: $prompt;
+    padding: 15px 25px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    outline: none;
+
+    &:focus {
+        border: 1px solid $input-label;
+    }
+}
+
+@mixin required {
+    &:after {
+        content: ' *';
+        color: $required;
+    }
+}

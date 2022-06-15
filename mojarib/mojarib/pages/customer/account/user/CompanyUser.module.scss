@@ -1,0 +1,23 @@
+.wrapper {
+    .heading {
+        text-align: center;
+    }
+
+    .bottom_heading {
+        display: flex;
+
+        .left_menu {
+            flex: 1;
+            direction: rtl;
+        }
+
+        .content {
+            flex: 2;
+
+            .form {
+                width: fit-content;
+                border-top: 3px solid #f2f1f8;
+            }
+        }
+    }
+}

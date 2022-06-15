@@ -1,0 +1,14 @@
+export * as account from "./account.png";
+export * as bannner from "./banner.png";
+export * as branch from "./branch.png";
+export * as customer_forgot_password_background from "./customer-forgot-password-background.png";
+export * as customer_login_background from "./customer-login-background.png";
+export * as customer_register_background from "./customer-register-background.png";
+export * as facebook from "./facebook.png";
+export * as instagram from "./instagram.png";
+export * as linkedin from "./linkedin.png";
+export * as logo from "./logo.png";
+export * as saudi_arabia from "./saudi_arabia.png";
+export * as send_email from "./send_email.png";
+export * as twitter from "./twitter.png";
+export * as united_kingdom from "./united_kingdom.png";

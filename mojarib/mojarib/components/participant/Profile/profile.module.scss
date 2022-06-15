@@ -1,0 +1,91 @@
+@use '../../styles/variables' as *;
+@use '../../styles/breakpoint' as *;
+@use '../../styles/mixins' as *;
+
+.item {
+    margin: 20px 0;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .input {
+        @include input-style;
+        width: 100%;
+    }
+
+    :global {
+        .label,
+        .select,
+        .radio,
+        .checkbox {
+            @include input-style;
+        }
+
+        .radio,
+        .checkbox {
+            background-color: transparent;
+        }
+
+        .select,
+        .radio,
+        .checkbox {
+            width: 100%;
+        }
+
+        .label {
+            margin-right: 20px;
+            text-align: right;
+            background-color: transparent;
+            padding: 15px 0;
+        }
+
+        .select,
+        .radio,
+        .label {
+            display: inline-block;
+        }
+    }
+}
+
+.save-container {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        margin-right: 10%;
+    }
+
+    .item {
+        justify-content: flex-end;
+
+        .input {
+            width: 70%;
+        }
+
+        flex-wrap: nowrap;
+
+        :global {
+            .select,
+            .radio,
+            .checkbox {
+                width: 70%;
+            }
+
+            .label,
+            .select,
+            .radio,
+            .checkbox {
+                padding: 15px 25px;
+            }
+        }
+    }
+
+    .save-container {
+        text-align: left;
+        padding-left: 30%;
+    }
+}

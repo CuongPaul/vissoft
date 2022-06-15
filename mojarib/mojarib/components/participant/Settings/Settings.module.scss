@@ -1,0 +1,187 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoint' as *;
+
+.email,
+.password,
+.subscribe {
+    .input {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .notice {
+        display: none;
+    }
+
+    :global {
+        .label {
+            padding-left: 0;
+            text-transform: initial;
+        }
+    }
+}
+
+.heading {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.change {
+    padding: 15px;
+    width: 120px;
+}
+
+.current-email {
+    color: $gray-5f;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $prompt;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.update {
+    margin-top: 20px;
+    width: 180px;
+}
+
+.email {
+    .update {
+        margin-left: 5px;
+    }
+}
+
+.subscribe,
+.password {
+    margin-top: 70px;
+}
+
+.subscribe {
+    .control {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .checkbox {
+        position: fixed;
+        left: -9999px;
+    }
+
+    .label {
+        position: relative;
+        padding-left: 35px;
+        font-size: 16px;
+        line-height: 22px;
+        color: $gray-5f;
+        font-weight: 400;
+        font-family: $prompt;
+
+        &:before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            display: block;
+            border: 2px solid $gray-ed;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &:after {
+            @include check;
+            position: absolute;
+            top: 0;
+            left: -9999px;
+            font-size: 13px;
+        }
+    }
+
+    .checkbox {
+        &:checked ~ .label {
+            &:before {
+                background-color: $blue;
+                border-color: $blue;
+            }
+
+            &:after {
+                left: 6px;
+                color: $white;
+            }
+        }
+    }
+}
+
+.blur {
+    opacity: .3;
+    pointer-events: none;
+}
+
+.notice {
+    font-size: 12px;
+    line-height: 17px;
+    color: $gray-99;
+    font-weight: 400;
+    font-family: $prompt;
+    padding-left: 20px;
+}
+
+.error {
+    width: 100%;
+    color: red;
+    font-size: 14px;
+}
+
+@media screen and (min-width: $tablet) {
+    .email {
+        margin-top: -25px;
+
+        .update {
+            margin-left: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .email,
+    .password,
+    .subscribe {
+        margin-left: -45px;
+
+        .input {
+            justify-content: flex-end;
+            width: 75%;
+        }
+
+        .notice {
+            display: block;
+            width: 25%;
+        }
+
+        :global {
+            .input {
+                width: 60%;
+            }
+        }
+    }
+
+    .actions {
+        width: 100%;
+        padding-left: 30%;
+    }
+
+    .error {
+        margin-left: 30%;
+    }
+}

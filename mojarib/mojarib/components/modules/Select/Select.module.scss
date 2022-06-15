@@ -1,0 +1,43 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoint' as *;
+
+.container:not(.multiple) {
+    position: relative;
+
+    &:after {
+        @include dropdown-arrow;
+        color: $gray-d3;
+        position: absolute;;
+        right: 25px;
+        bottom: 20px;
+    }
+}
+
+.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.multiple {
+    .select {
+        overflow: auto;
+    }
+}
+
+.required {
+    .label {
+        @include required;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .container:not(.multiple) {
+        &:after {
+            top: 50%;
+            bottom: auto;
+            transform: translateY(-50%);
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@use '../styles/variables' as *;
+
+.column-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    align-items: center;
+    @extend .column-flex;
+}
+
+.field {
+    margin: 15px 0;
+    align-items: center;
+    @extend .column-flex;
+
+    input {
+        width: 300px;
+        height: 40px;
+        margin-top: 5px;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+}

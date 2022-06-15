@@ -1,0 +1,81 @@
+@use '../styles/variables' as *;
+@use '../styles/breakpoint' as *;
+@use '../styles/mixins' as *;
+
+.container {
+    list-style: none;
+    padding: 0;
+}
+
+.item {
+    text-transform: uppercase;
+    padding: 20px 35px;
+    margin: 3px 0;
+    color: $dark-blue;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: $prompt;
+    border-left: 2px solid $gray-ed;
+
+    &:not(.selected) {
+        &:hover {
+            border-left-color: $blue;
+            cursor: pointer;
+        }
+    }
+}
+
+.selected {
+    background-color: $gray-f5;
+    color: $blue;
+    border-left-color: $blue;
+}
+
+@media screen and (max-width: $tablet - 1) {
+    .container {
+        background-color: $gray-f1;
+        color: $blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        .item:not(.selected) {
+            @include hide;
+        }
+
+        .item {
+            padding: 20px;
+            margin: 0;
+            transition: all .3s;
+        }
+
+        .selected {
+            border-color: transparent;
+        }
+
+        &:after {
+            @include dropdown-arrow;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        &.active {
+            .item {
+                @include show;
+            }
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        margin-right: 50px;
+    }
+}

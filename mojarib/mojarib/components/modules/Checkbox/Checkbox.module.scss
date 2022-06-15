@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+@use '../../styles/breakpoint' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+    .checkbox {
+        padding: 15px 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow: auto;
+    }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-of-type) {
+        margin-right: 80px;
+    }
+}
+
+.input {
+    @include hide;
+
+    &:checked ~ .label {
+        @include radio-icon-checked;
+
+        &:before {
+            top: 7px;
+            left: -35px;
+        }
+    }
+}
+
+.label {
+    @include radio-icon;
+
+    &:after {
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.required {
+    @include required;
+}

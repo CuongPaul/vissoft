@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "root",
+        "password": "Dev1234567@#",
+        "database": "my_crud_nodejs",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "root",
+        "password": "Dev1234567@#",
+        "database": "my_crud_nodejs",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "root",
+        "password": "Dev1234567@#",
+        "database": "my_crud_nodejs",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+}

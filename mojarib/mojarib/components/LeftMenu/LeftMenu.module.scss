@@ -1,0 +1,21 @@
+.wrapper {
+    .item {
+        width: 200px;
+        height: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #0f0d46;
+        list-style: none;
+        line-height: 50px;
+        text-align: center;
+        margin-bottom: 3px;
+        border-left: 3px solid #f2f1f8;
+    }
+
+    .selected,
+    .item:hover {
+        color: #193fb2;
+        background-color: #f6f9ff;
+        border-left: 3px solid #1b367b;
+    }
+}

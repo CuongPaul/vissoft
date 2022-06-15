@@ -1,0 +1,28 @@
+.wrapper {
+    .main_content {
+        display: flex;
+        position: relative;
+        align-items: center;
+        flex-direction: column;
+
+        .heading {
+            margin: 50px 0px;
+            font-size: large;
+            text-transform: uppercase;
+        }
+
+        .call_action {
+            height: 75px;
+            width: 300px;
+            display: flex;
+            cursor: pointer;
+            margin: 30px 0px;
+            font-size: large;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            border: 1px solid black;
+        }
+    }
+}

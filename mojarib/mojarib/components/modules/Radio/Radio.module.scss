@@ -1,0 +1,51 @@
+@use '../../styles/variables' as *;
+@use '../../styles/breakpoint' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+    > .radio {
+        display: flex !important;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0;
+        position: relative;
+    }
+
+    > .label {
+        margin-left: 0;
+    }
+}
+
+.controller {
+    width: fit-content;
+    position: relative;
+
+    &:not(:last-of-type) {
+        margin-right: 20px;
+    }
+
+    .label {
+        @include radio-icon;
+    }
+}
+
+.input {
+    @include hide;
+
+    &:checked ~ .label {
+        @include radio-icon-checked;
+    }
+}
+
+.required {
+    @include required;
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        > .label {
+            padding: 0 25px;
+            margin-left: 25px;
+        }
+    }
+}
